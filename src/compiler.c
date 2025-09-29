@@ -6,7 +6,7 @@
 char *read_file(const char *PATH);
 
 int main(void) {
-    char *source = read_file("tests/basic.c");
+    char *source = read_file("examples/test.c"); // Examples of c files in examples folder
     if (source) {
         printf("%s\n", source);
         free(source);
