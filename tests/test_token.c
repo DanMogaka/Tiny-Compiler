@@ -36,11 +36,23 @@ void test_token_type_to_string() {
 int main() {
     test_create_token();
     test_token_type_to_string();
+
+    TokenList test_t_list;
+
+    Token int_token = create_token(TOK_INT, "int", 3, 1, 1);
+    Token int_token2 = create_token(TOK_ASSIGN, "=", 1, 1, 5);
+
+    init_token_list(&test_t_list, 100);
+
+    token_list_push(&test_t_list, int_token);
+    token_list_push(&test_t_list, int_token2);
+
+    free_token_list(&test_t_list);
+
     printf("All token tests passed!\n");
     return 0;
 }
 
-
-
-// Run test with this on cmd line
+// Run test with these on command line.
 // gcc -Iinclude tests/test_token.c src/token.c -o run_test_token
+// ./run_test_token
